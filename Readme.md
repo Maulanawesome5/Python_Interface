@@ -19,7 +19,10 @@ Jika tidak terdapat tkinter, maka bisa dilakukan proses instalasi package menggu
 ## SOSIAL MEDIA SAYA
 Kunjungi sosial media saya untuk mengenal lebih akrab.
 1. Instagram
+https://www.instagram.com/uzumakiaji/
 
 2. Github
+https://github.com/Maulanawesome5
 
 3. Linkedin
+https://www.linkedin.com/in/aji-wicaksono300699
