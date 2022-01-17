@@ -6,15 +6,21 @@ pada perangkat. Untuk referensi dan tutorial akan dicantumkan pada bagian di baw
 
 ## TUTORIAL DAN REFERENSI
 1. Youtube
+    * Kelas Terbuka : https://www.youtube.com/c/KelasTerbuka
+    * Freecodecamp : https://www.youtube.com/c/Freecodecamp
 
 2. Website dan Artikel
+    * Packtub.com https://www.packtpub.com/product/python-gui-programming-with-tkinter/9781788835886
+    * Python.org https://docs.python.org/3/library/tkinter.html
+    * TkDocs http://tkdocs.com/tutorial/onepage.html
+    * Tkinter 8.5 Reference https://tkdocs.com/shipman/
 
 3. Buku
+    * Budiharto, Widodo. (2019). *Pemrograman Python untuk Ilmu Komputer dan Teknik*. Yogyakarta: Andi Offset.
 
 ## CARA INSTALASI
 Seperti yang dijelaskan sebelumnya, package tkinter sudah otomatis terpasang saat menginstal python.
-Anda bisa mengecek melalui command prompt atau terminal (apple / linux) dengan cara mengetik <pip list>
-Jika tidak terdapat tkinter, maka bisa dilakukan proses instalasi package menggunakan sintaks <pip install....>
+Anda bisa mengecek melalui command prompt (windows) atau terminal (apple / linux) dengan cara mengetik `pip list`
 
 ## SOSIAL MEDIA SAYA
 Kunjungi sosial media saya untuk mengenal lebih akrab.
