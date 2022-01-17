@@ -6,8 +6,9 @@ root.iconbitmap('D:/LATIHAN PEMROGRAMAN/PYTHON_GUI/Freecodecamp.org/icon/bitcoin
 # Method iconbitmap() hanya mendukung gambar/icon dengan format .ico
 # kalau bisa harus desain dulu, atau download dari internet
 
-
-
+# Membuat tombol untuk exit aplikasi
+button_quit = Button(master=root, text="Exit", command=root.quit)
+button_quit.pack()
 
 
 
