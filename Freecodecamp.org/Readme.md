@@ -3,6 +3,6 @@ Repository ini dibuat untuk tujuan belajar bahasa pemrograman python. Saya menco
 
 ## Tutorial dan Referensi
 Tutorial python GUI menggunakan modul tkinter ini saya ikuti dari video youtube, channel freecodecamp.org
-URL video   : https://youtu.be/YXPyB4XeYLA
-URL channel : https://www.youtube.com/c/Freecodecamp
-Official Site : https://www.freecodecamp.org
+1. URL video   : https://youtu.be/YXPyB4XeYLA
+2. URL channel : https://www.youtube.com/c/Freecodecamp
+3. Official Site : https://www.freecodecamp.org
