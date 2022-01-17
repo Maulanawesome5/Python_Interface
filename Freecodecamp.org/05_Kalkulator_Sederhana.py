@@ -26,34 +26,64 @@ def button_click(number):
 
 # Fungsi untuk menghapus input pada Entry
 def button_clear():
-    entryBox.delete()
+    entryBox.delete(0, END)
 
 
 # Fungsi untuk menjumlahkan angka
 def button_add():
-    first_number = entryBox.get()
-    global f_num
-    f_num = int(first_number)
+    first_number = entryBox.get() # Variabel untuk menyimpan angka yang pertama dimasukkan
+    global f_num # Global scope variabel, untuk bisa di masukkan ke fungsi aritmatika lainnya
+    global math # Global scope variabel, untuk bisa di masukkan ke fungsi aritmatika lainnya
+    math = "addition"
+    f_num = int(first_number) # Casting tipe data, untuk angka yang pertama dimasukkan
     entryBox.delete(0, END)
 
 
 # Fungsi sama dengan untuk menampilkan hasil penjumlahan
 def button_equal():
-    second_number = entryBox.get()
+    second_number = entryBox.get() # Variabel untuk menyimpan angka yang kedua dimasukkan
     entryBox.delete(0, END)
-    entryBox.insert(0, f_num + int(second_number))
+    if math == "addition":
+        entryBox.insert(0, f_num + int(second_number))
+    
+    if math == "subtraction":
+        entryBox.insert(0, f_num - int(second_number))
+    
+    if math == "multiplication":
+        entryBox.insert(0, f_num * int(second_number))
+    
+    if math == "division":
+        entryBox.insert(0, f_num / int(second_number))
 
 
+# Fungsi untuk operasi pengurangan
 def button_subtract():
-    pass
+    first_number = entryBox.get()
+    global f_num
+    global math
+    math = "subtraction"
+    f_num = int(first_number)
+    entryBox.delete(0, END)
 
 
+# Fungsi untuk operasi perkalian
 def button_multiply():
-    pass
+    first_number = entryBox.get()
+    global f_num
+    global math
+    math = "multiplication"
+    f_num = int(first_number)
+    entryBox.delete(0, END)
 
 
+# Fungsi untuk operasi pembagian angka
 def button_divide():
-    pass
+    first_number = entryBox.get()
+    global f_num
+    global math
+    math = "division"
+    f_num = int(first_number)
+    entryBox.delete(0, END)
 
 # Membuat widget tombol angka
 button1 = Button(
@@ -75,7 +105,7 @@ button9 = Button(master=root, text="9", padx=40, pady=20, command=lambda: button
 button0 = Button(master=root, text="0", padx=40, pady=20, command=lambda: button_click(0))
 
 # Tombol operator aritmatika dan hapus layar
-button_tambah = Button(master=root, text="+", padx=39, pady=20, command=button_add)
+button_add = Button(master=root, text="+", padx=39, pady=20, command=button_add)
 button_equal = Button(master=root, text="=", padx=91, pady=20, command=button_equal)
 button_clear = Button(master=root, text="Clear", padx=79, pady=20, command=button_clear)
 
@@ -100,12 +130,12 @@ button9.grid(row=1, column=2)
 button0.grid(row=4, column=0)
 
 # Tombol operator aritmatika dan hapus layar
-button_tambah.grid(row=5, column=0)
+button_add.grid(row=5, column=0)
 button_equal.grid(row=5, column=1, columnspan=2)
 button_clear.grid(row=4, column=1, columnspan=2)
 button_subtract.grid(row=6, column=0)
-button_multiply.grid(row=6, column=0)
-button_divide.grid(row=6, column=0)
+button_multiply.grid(row=6, column=1)
+button_divide.grid(row=6, column=2)
 
 
 
