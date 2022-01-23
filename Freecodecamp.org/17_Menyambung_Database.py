@@ -22,7 +22,8 @@ c.execute("""CREATE TABLE address (
     city text,
     state text,
     zipcode integer
-)""")
+    )"""
+)
 
 # commit change
 conn.commit()
