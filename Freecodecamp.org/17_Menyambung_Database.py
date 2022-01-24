@@ -8,27 +8,28 @@ root.iconbitmap('D:/LATIHAN PEMROGRAMAN/PYTHON_GUI/Freecodecamp.org/icon/bitcoin
 root.geometry('400x400')
 
 # Database
-# Create a database or connect to one
+# Membuat database baru atau menyambung ke database yang ada
 conn = sqlite3.connect('address_book.db')
 
 # Membuat cursor
 c = conn.cursor()
 
 # Membuat table
-c.execute("""CREATE TABLE address (
+# Tipe data yang terdapat pada SQLite3 = text, integer, real (desimal), null, blob (image, audio, video)
+c.execute("""CREATE TABLE addresses (
     first_name text,
     last_name text,
     address text,
     city text,
     state text,
     zipcode integer
-    )"""
-)
+    )
+""")
 
-# commit change
+# commit change, setiap melakukan perubahan atau menambah data
 conn.commit()
 
-# close connection
+# close connection, setelah selesai melakukan perubahan
 conn.close()
 
 root.mainloop()
