@@ -14,6 +14,21 @@ conn = sqlite3.connect('address_book.db')
 # Membuat cursor
 c = conn.cursor()
 
+# Function untuk menghapus record
+def delete():
+    # Membuat database baru atau menyambung ke database yang ada
+    conn = sqlite3.connect('address_book.db')
+
+    # Membuat cursor
+    c = conn.cursor()
+
+    # Menghapus record
+    c.execute("DELETE from addresses WHERE oid = " + delete_box.get())
+
+    conn.commit() # commit setiap perubahan
+    conn.close() # close connection dari database setelah selesai
+
+
 # create submit function for database
 def submit():
     # Membuat database baru atau menyambung ke database yang ada
@@ -77,10 +92,10 @@ def query():
     # Loop thru results
     print_records = ''
     for record in records:
-        print_records += str(record) + "\n"
+        print_records += str(record[0]) + " " + str(record[1]) + " " + "\t" + str(record[6]) + "\n"
     
     query_label = Label(root, text=print_records)
-    query_label.grid(row=8, column=0, columnspan=2)
+    query_label.grid(row=11, column=0, columnspan=2)
 
     conn.commit() # commit change to database
     conn.close() # close connection from database
@@ -88,7 +103,7 @@ def query():
 
 # Membuat textbox
 f_name = Entry(root, width=30)
-f_name.grid(row=0, column=1, padx=20)
+f_name.grid(row=0, column=1, padx=20, pady=(10, 0))
 l_name = Entry(root, width=30)
 l_name.grid(row=1, column=1)
 address = Entry(root, width=30)
@@ -100,9 +115,12 @@ state.grid(row=4, column=1)
 zipcode = Entry(root, width=30)
 zipcode.grid(row=5, column=1)
 
+delete_box = Entry(root, width=20)
+delete_box.grid(row=9, column=1, pady=5)
+
 # Membuat textbox label
 f_name_label = Label(master=root, text="First Name")
-f_name_label.grid(row=0, column=0)
+f_name_label.grid(row=0, column=0, pady=(10, 0))
 l_name_label = Label(master=root, text="Last Name")
 l_name_label.grid(row=1, column=0)
 address_label = Label(master=root, text="Address")
@@ -114,6 +132,8 @@ state_label.grid(row=4, column=0)
 zipcode_label = Label(master=root, text="Zipcode")
 zipcode_label.grid(row=5, column=0)
 
+delete_box_label = Label(root, text="Delete ID")
+delete_box_label.grid(row=9, column=0, pady=5)
 
 # Membuat submit button untuk menambahkan data dari GUI ke database
 submit_btn = Button(
@@ -132,6 +152,13 @@ query_btn = Button(
 )
 query_btn.grid(row=7, column=0, columnspan=2, pady=10, padx=10, ipadx=137)
 
+# Membuat tombol untuk menghapus query
+delete_btn = Button(
+    master=root,
+    text="Delete record",
+    command=delete
+)
+delete_btn.grid(row=10, column=0, columnspan=2, pady=10, padx=10, ipadx=136)
 
 
 conn.commit() # commit setiap perubahan
